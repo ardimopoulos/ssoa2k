@@ -23,8 +23,6 @@ services:
       LDAP_TLS: "false"
     ports:
       - "389:389"
-    volumes:
-      - ./src/main/resources/ldap/test_server.ldif:/container/service/slapd/assets/config/bootstrap/ldif/50-bootstrap.ldif
   phpldapadmin:
     image: osixia/phpldapadmin:latest
     container_name: phpldapadmin
