@@ -11,8 +11,8 @@ public class KeycloakTokenRequest extends KeycloakRequest {
     private String username;
     private String password;
 
-    public KeycloakTokenRequest(String username, String password) {
-        super(PASSWORD.getValue());
+    public KeycloakTokenRequest(String username, String password, String clientId, String clientSecret) {
+        super(PASSWORD.getValue(), clientId, clientSecret);
         this.username = username;
         this.password = password;
     }

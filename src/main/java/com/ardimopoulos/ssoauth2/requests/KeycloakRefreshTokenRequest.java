@@ -10,8 +10,8 @@ public class KeycloakRefreshTokenRequest extends KeycloakRequest{
 
     private String refreshToken;
 
-    public KeycloakRefreshTokenRequest(String refreshToken) {
-        super(REFRESH.getValue());
+    public KeycloakRefreshTokenRequest(String refreshToken, String clientId, String clientSecret) {
+        super(REFRESH.getValue(), clientId, clientSecret);
         this.refreshToken = refreshToken;
     }
 
