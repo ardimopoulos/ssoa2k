@@ -11,8 +11,8 @@ import java.security.Principal;;
 @RequestMapping("/api")
 public class SampleController {
 
-    @GetMapping("/hello")
-    public String sayHello(@AuthenticationPrincipal Principal auth) {
-        return "Hello " + auth.toString();
-    }
+  @GetMapping("/hello")
+  public String sayHello(@AuthenticationPrincipal Principal auth) {
+    return "Hello " + auth.toString();
+  }
 }

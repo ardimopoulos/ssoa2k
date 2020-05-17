@@ -14,21 +14,22 @@ import javax.validation.constraints.NotBlank;
 @RequestMapping("/api")
 public class AuthenticationController {
 
-    private final AuthenticationService authenticationService;
+  private final AuthenticationService authenticationService;
 
-    public AuthenticationController(AuthenticationService authenticationService) {
-        this.authenticationService = authenticationService;
-    }
+  public AuthenticationController(AuthenticationService authenticationService) {
+    this.authenticationService = authenticationService;
+  }
 
-    @PostMapping(value = "/oauth2/token", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
-    public ResponseEntity<LoginResponseDto> login(@RequestParam("username") @NotBlank String username,
-                                                  @RequestParam("password") @NotBlank String password) {
+  @PostMapping(value = "/oauth2/token", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+  public ResponseEntity<LoginResponseDto> login(@RequestParam("username") @NotBlank String username,
+      @RequestParam("password") @NotBlank String password) {
 
-        return new ResponseEntity<>(authenticationService.login(username, password), HttpStatus.OK);
-    }
+    return new ResponseEntity<>(authenticationService.login(username, password), HttpStatus.OK);
+  }
 
-    @PostMapping(value = "/oauth2/token/refresh", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
-    public ResponseEntity<LoginResponseDto> refresh(@RequestParam("refresh_token") @NotBlank String refreshToken) {
-        return new ResponseEntity<>(authenticationService.refresh(refreshToken), HttpStatus.OK);
-    }
+  @PostMapping(value = "/oauth2/token/refresh", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+  public ResponseEntity<LoginResponseDto> refresh(
+      @RequestParam("refresh_token") @NotBlank String refreshToken) {
+    return new ResponseEntity<>(authenticationService.refresh(refreshToken), HttpStatus.OK);
+  }
 }

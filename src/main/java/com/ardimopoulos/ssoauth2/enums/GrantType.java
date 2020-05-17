@@ -4,18 +4,18 @@ import lombok.Getter;
 
 public enum GrantType {
 
-    PASSWORD("password"),
-    REFRESH("refresh_token");
+  PASSWORD("password"),
+  REFRESH("refresh_token");
 
-    @Getter
-    private String value;
+  @Getter
+  private String value;
 
-    GrantType(String value) {
-        this.value = value;
-    }
+  GrantType(String value) {
+    this.value = value;
+  }
 
-    @Override
-    public String toString() {
-        return value;
-    }
+  @Override
+  public String toString() {
+    return value;
+  }
 }
